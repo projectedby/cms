@@ -4,6 +4,7 @@
   "description": "ProjectedBy Content Management System",
   "main": "./src/index.js",
   "scripts": {
+    "frontend": "npm run start --workspace frontend",
     "backend": "npm run start --workspace backend",
     "test": "mocha --recursive",
     "test:cms": "npm run test --workspace cms"

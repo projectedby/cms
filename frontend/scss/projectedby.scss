@@ -1,0 +1,43 @@
+$theme-colors: (
+  "primary":    #15307C,        // Lapis blue
+  "secondary":  #370D00,        // Black bean
+  "success":    #06632b,        // Dartmouse green
+  "info":       #597ee5,        // Crayola
+  "warning":    #FFC436,        // Mikado yello
+  "danger":     #69140E,        // Blood red
+  "light":      #99A8D3,        // Vista blue
+  "dark":       #424651         // Charcoal
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+  --bs-body-font-family: 'Montserrat', 'Noto Sans KR', sans-serif;;
+}
+
+/** --bs-breakpoint-xs */
+
+/** --bs-breakpoint-sm */
+@media (min-width: 576px) {
+}
+
+/** --bs-breakpoint-md */
+@media (min-width: 768px) {
+}
+
+/** --bs-breakpoint-lg */
+@media (min-width: 992px) {
+}
+
+/** --bs-breakpoint-xl */
+@media (min-width: 1200px) {
+}
+
+/** --bs-breakpoint-xxl */
+@media (min-width: 1400px) {
+}
+
