@@ -5,7 +5,8 @@
   "main": "./src/index.js",
   "scripts": {
     "backend": "npm run start --workspace backend",
-    "test": "mocha --recursive"
+    "test": "mocha --recursive",
+    "test:cms": "npm run test --workspace cms"
   },
   "repository": {
     "type": "git",
