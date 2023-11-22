@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><%= opengraph.title %></title>
+        <link rel="manifest" href="/manifest.json">
+        <%- include('opengraph.ejs', opengraph) %>
+        <%- include("style.ejs") %>
+    </head>
+    <body>
+        <%- include('header.ejs') %>
+        <div class="container pt-4">
+            <%- include(view) %>
+        </div>
+        <%- include('footer.ejs') %>
+        <%- include('modal.ejs') %>
+        <%- include('script.ejs') %>
+    </body>
+</html>

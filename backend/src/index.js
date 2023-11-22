@@ -9,6 +9,7 @@ import Root from "./route/Root.js";
 // import User from "./route/User.js";
 
 import Module from "./Module.js";
+import { StorateExtensionContentManagementSystemWordpress } from "cms";
 
 import Storage from "storage";
 
