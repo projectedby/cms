@@ -45,6 +45,8 @@
 
     const subscription = document.getElementById('subscription');
 
+    console.log(subscription);
+
     subscription.addEventListener('submit', async event => {
         event.preventDefault();
 
@@ -54,8 +56,17 @@
             projectedby.bootstrap.input.validate(email);
 
             if(await projectedby.subscribe(email.value)) {
-                console.log(history.length);
-                // projectedby.bootstrap.modal.open('success');
+                projectedby.bootstrap.modal.open('success', {
+                    on: () => {
+                        const title = document.getElementById('projectedby-cms-success-title');
+                        const paragraph = document.getElementById('projectedby-cms-success-paragraph');
+
+                        title.innerHTML = 'Thank you to subscribe our newsletter';
+                        paragraph.innerHTML = `We will do our best to deliver good quality artificial intelligence information to you.<br />
+<img width="160" src="/asset/image/undraw_subscribe_vspl.svg" class="my-5"><br />
+Thank you again for subscribing to our newsletter.`;
+                    }
+                });
             }
         } catch(e) {
             console.log(e);

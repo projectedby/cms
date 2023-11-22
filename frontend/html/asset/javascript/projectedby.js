@@ -352,12 +352,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Bootstrap)
 /* harmony export */ });
 /* harmony import */ var _bootstrap_Input_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap/Input.js */ "./src/script/bootstrap/Input.js");
+/* harmony import */ var _bootstrap_Modal_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bootstrap/Modal.js */ "./src/script/bootstrap/Modal.js");
+
 
 
 class Bootstrap {
     static #input = _bootstrap_Input_js__WEBPACK_IMPORTED_MODULE_0__["default"];
+    static #modal = _bootstrap_Modal_js__WEBPACK_IMPORTED_MODULE_1__["default"];
 
     static get input(){ return Bootstrap.#input; }
+    static get modal(){ return Bootstrap.#modal; }
 }
 
 /***/ }),
@@ -405,6 +409,76 @@ class BootstrapInput {
                 o.classList.remove('is-invalid');
             }
         });
+    }
+}
+
+/***/ }),
+
+/***/ "./src/script/bootstrap/Modal.js":
+/*!***************************************!*\
+  !*** ./src/script/bootstrap/Modal.js ***!
+  \***************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ BootstrapModal)
+/* harmony export */ });
+
+class BootstrapModal {
+    static #o = new Map();
+    static #modal = null;
+    static #submit = null;
+    static #cancel = null;
+
+    static add(name, o) {
+        BootstrapModal.#o.set(name, o);
+    }
+
+    static open(name, { submit, cancel, on }) {
+        const modal = BootstrapModal.#o.get(name);
+
+        if(BootstrapModal.#modal) {
+            BootstrapModal.#modal.hide();
+        }
+
+        modal._element.addEventListener('show.bs.modal', async event => {
+            if(on) on();
+        }, { once: true });
+
+        modal._element.addEventListener('shown.bs.modal', async event => {
+            BootstrapModal.#modal = modal;
+            BootstrapModal.#submit = submit;
+            BootstrapModal.#cancel = cancel;
+        }, { once: true });
+
+        modal._element.addEventListener('hidden.bs.modal', async event => {
+            BootstrapModal.#modal = null;
+        }, { once: true });
+
+        modal.show();
+    }
+
+    static async submit() {
+        if(BootstrapModal.#modal) {
+            if(BootstrapModal.#submit) {
+                await BootstrapModal.#submit();
+            }
+            BootstrapModal.#submit = null;
+            BootstrapModal.#cancel = null;
+            BootstrapModal.#modal.hide();
+        }
+    }
+
+    static async cancel() {
+        if(BootstrapModal.#modal) {
+            if(BootstrapModal.#cancel) {
+                await BootstrapModal.#cancel();
+            }
+            BootstrapModal.#submit = null;
+            BootstrapModal.#cancel = null;
+            BootstrapModal.#modal.hide();
+        }
     }
 }
 

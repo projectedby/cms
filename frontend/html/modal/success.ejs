@@ -1,0 +1,21 @@
+<div class="modal fade" id="projectedby-cms-success" tabindex="-1" aria-labelledby="projectedby-cms-success-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 fw-bold" id="projectedby-cms-success-title"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p id="projectedby-cms-success-paragraph"></p>
+            </div>
+            <div class="modal-footer">
+                <p class="small text-end fw-bold">We deliver information related to AI</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="module">
+    window.addEventListener('load', event => {
+        projectedby.bootstrap.modal.add('success', new bootstrap.Modal('#projectedby-cms-success'));
+    });
+</script>
