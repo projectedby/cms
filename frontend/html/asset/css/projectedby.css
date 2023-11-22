@@ -11876,6 +11876,10 @@ body > div.container > form#subscription {
   max-width: 300px;
 }
 
+body > div.container > section > div.button {
+  text-align: right;
+}
+
 p {
   padding: 0px;
   margin: 0px;
@@ -11894,6 +11898,9 @@ a {
   body > header .container-fluid, body > header .container-sm, body > header .container-md, body > header .container-lg, body > header .container-xl, body > header .container-xxl {
     max-width: 500px;
   }
+  body > div.container > section {
+    width: 500px;
+  }
 }
 /** --bs-breakpoint-md */
 @media (min-width: 768px) {
@@ -11903,6 +11910,9 @@ a {
   body > header .container-fluid, body > header .container-sm, body > header .container-md, body > header .container-lg, body > header .container-xl, body > header .container-xxl {
     max-width: 700px;
   }
+  body > div.container > section {
+    width: 700px;
+  }
 }
 /** --bs-breakpoint-lg */
 @media (min-width: 992px) {
@@ -11911,6 +11921,9 @@ a {
   }
   body > header .container-fluid, body > header .container-sm, body > header .container-md, body > header .container-lg, body > header .container-xl, body > header .container-xxl {
     max-width: 900px;
+  }
+  body > div.container > section {
+    width: 900px;
   }
 }
 /** --bs-breakpoint-xl */

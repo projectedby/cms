@@ -33,6 +33,10 @@ body > div.container > form#subscription {
     max-width: 300px;
 }
 
+body > div.container > section > div.button {
+    text-align: right;
+}
+
 p {
     padding: 0px;
     margin: 0px;
@@ -53,6 +57,10 @@ a {
     body > header .container-fluid {
         max-width: 500px;
     }
+
+    body > div.container > section {
+        width: 500px;
+    }
 }
 
 /** --bs-breakpoint-md */
@@ -64,6 +72,10 @@ a {
     body > header .container-fluid {
         max-width: 700px;
     }
+
+    body > div.container > section {
+        width: 700px;
+    }
 }
 
 /** --bs-breakpoint-lg */
@@ -74,6 +86,10 @@ a {
 
     body > header .container-fluid {
         max-width: 900px;
+    }
+
+    body > div.container > section {
+        width: 900px;
     }
 }
 

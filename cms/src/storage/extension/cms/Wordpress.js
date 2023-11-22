@@ -14,10 +14,15 @@ export default class StorageExtensionContentManagementSystemWordpress extends St
     }
 
     async getPost(o = null) {
-        const response = await this.#http.get(null, Object.assign({ rest_route: '/wp/v2/posts' }, o));
+        const rest_route = `/wp/v2/posts${o && o.id ? `/${o.id}` : ''}`;
+        if(o.id) delete o.id;
+        
+        const response = await this.#http.get(null, Object.assign({ rest_route }, o));
 
         if(response.status === 200) {
             const posts = [];
+
+            response.json = Array.isArray(response.json) ? response.json : [ response.json ];
 
             for(const o of response.json) {
                 const post = new ContentManagementSystemPost();
@@ -38,6 +43,8 @@ export default class StorageExtensionContentManagementSystemWordpress extends St
 
             return posts;
         }
+
+        console.log(response);
 
         throw new ExceptionExternalHttp();  // TODO: 
     }

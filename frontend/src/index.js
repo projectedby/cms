@@ -6,15 +6,21 @@ import path from "path";
 import { fileURLToPath } from 'url';
 
 import Log from "log";
+import Storage from "storage";
+
+import StorageExtensionBackend from "./storage/extension/Backend.js";
 
 // import Card from "./route/Card.js";
 // import Post from "./route/Post.js";
 // import Profile from "./route/Profile.js";
 import Root from "./route/Root.js";
+import Post from "./route/Post.js";
 
-// import Module from "./Module.js";
+import Module from "./Module.js";
 
 Log.name = "projectedby";
+
+Module.backend = new Storage(new StorageExtensionBackend('http://localhost:8090/'));
 
 // const tag = "frontend";
 
@@ -51,6 +57,7 @@ application.set('view engine', 'ejs');
 // DEFINE ROUTER: START
 
 application.use("/", Root);
+application.use("/post", Post);
 // application.use("/post", Post);
 // application.use("/profile", Profile);
 // application.use("/card", Card);

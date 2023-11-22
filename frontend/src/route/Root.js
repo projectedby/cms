@@ -2,14 +2,28 @@ import express from "express";
 
 import Opengraph from "../Opengraph.js";
 
+import Module from "../Module.js";
+
 const Root = express.Router();
 
 Root.get("/", async (req, res) => {
-    const opengraph = new Opengraph("");        // TODO: 
-    const view = 'posts';
-    const posts = [];
+    
+    try {
+        const opengraph = new Opengraph("");        // TODO: 
+        const view = 'posts';    
+        const posts = await Module.backend.call('getPost');
 
-    res.render("index.ejs", { opengraph, view, posts });
+        console.log(posts);
+    
+        res.render("index.ejs", { opengraph, view, posts });
+    } catch(e) {
+        console.log(e);
+        const opengraph = new Opengraph("");        // TODO: 
+        const view = 'error';    
+
+        res.render('index.ejs', { opengraph, view });
+    }
+
 });
 
 Root.get("/signup", async (req, res) => {

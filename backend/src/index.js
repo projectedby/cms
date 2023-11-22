@@ -4,19 +4,19 @@ import cors from "cors";
 import Log from "log";
 
 import Root from "./route/Root.js";
+import Post from "./route/Post.js"
 
-// import Post from "./route/Post.js";
 // import User from "./route/User.js";
 
 import Module from "./Module.js";
-import { StorageExtensionContentManagementSystemWordpress } from "cms";
+import StorageExtensionContentManagementSystemAI from "./storage/extension/cms/AI.js";
 import StorageExtensionDatabaseMysqlProjectedByAI from "./storage/extension/database/mysql/projectedby/AI.js";
 
 import Storage from "storage";
 
 Log.name = "backend";           // TODO: 설정에서 어플리케이션 이름을 삽입하도록 하자.
 
-Module.cms = new Storage(new StorageExtensionContentManagementSystemWordpress('http://localhost:8080/'));
+Module.cms = new Storage(new StorageExtensionContentManagementSystemAI('http://localhost:8080/'));
 Module.database = new Storage(new StorageExtensionDatabaseMysqlProjectedByAI('mysql://novemberizing@localhost:3306/projectedby_ai', 'melong@17'));
 
 const application = express();
@@ -48,8 +48,8 @@ application.use(cors({
 // // DEFINE ROUTER: START
 
 application.use("/", Root);
+application.use("/post", Post);
 
-// application.use("/post", Post);
 // application.use("/user", User);
 
 // // DEFINE ROUTER: END
