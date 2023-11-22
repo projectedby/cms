@@ -1,10 +1,11 @@
 {
-  "name": "@projectedby/cms",
+  "name": "cms",
   "version": "0.0.1",
-  "description": "ProjectedBy Content Management System",
+  "description": "ProjectedBy Content Management System Module",
   "main": "./src/index.js",
+  "devDependencies": {},
+  "type": "module",
   "scripts": {
-    "backend": "npm run start --workspace backend",
     "test": "mocha --recursive"
   },
   "repository": {
@@ -14,22 +15,14 @@
   "keywords": [
     "ProjectedBy",
     "CMS",
-    "Novemberizing",
     "NodeJS",
-    "Javascript"
+    "Javascript",
+    "Novemberizing"
   ],
   "author": "novemberizing <novemberizing@gmail.com>",
   "license": "MPL-2.0",
   "bugs": {
     "url": "https://github.com/projectedby/cms/issues"
   },
-  "homepage": "https://github.com/projectedby/cms#readme",
-  "workspaces": [
-    "exception",
-    "storage",
-    "frontend",
-    "backend",
-    "log",
-    "cms"
-  ]
+  "homepage": "https://github.com/projectedby/cms#readme"
 }
