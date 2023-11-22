@@ -32,6 +32,7 @@
     "frontend",
     "backend",
     "log",
-    "cms"
+    "cms",
+    "fetch"
   ]
 }

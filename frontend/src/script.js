@@ -1,8 +1,10 @@
 import Backend from "./script/Backend.js";
 import Bootstrap from "./script/Bootstrap.js";
 
+const backend = new Backend("http://localhost:8090/");
+
 async function subscribe(email) {
-    const response = await Backend.post('/subscribe', { email });
+    const response = await backend.post('/subscribe', { email });
 
     console.log(response);
 
@@ -12,7 +14,7 @@ async function subscribe(email) {
 const projectedby = {
     subscribe,
     bootstrap: Bootstrap,
-    backend: Backend
+    backend
 };
 
 window.projectedby = projectedby;

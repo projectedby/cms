@@ -25,6 +25,27 @@ class Exception extends Error {
 
 /***/ }),
 
+/***/ "../exception/src/exception/Database.js":
+/*!**********************************************!*\
+  !*** ../exception/src/exception/Database.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ExceptionDatabase)
+/* harmony export */ });
+/* harmony import */ var _Exception_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Exception.js */ "../exception/src/Exception.js");
+
+
+class ExceptionDatabase extends _Exception_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    constructor(message = '', origin = null) {
+        super(message, origin);
+    }
+}
+
+/***/ }),
+
 /***/ "../exception/src/exception/External.js":
 /*!**********************************************!*\
   !*** ../exception/src/exception/External.js ***!
@@ -83,6 +104,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class ExceptionUnsupported extends _Exception_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    constructor(message = '', origin = null) {
+        super(message, origin);
+    }
+}
+
+
+/***/ }),
+
+/***/ "../exception/src/exception/database/Connection.js":
+/*!*********************************************************!*\
+  !*** ../exception/src/exception/database/Connection.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ExceptionDatabaseConnection)
+/* harmony export */ });
+/* harmony import */ var _Database_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Database.js */ "../exception/src/exception/Database.js");
+
+
+class ExceptionDatabaseConnection extends _Database_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
     constructor(message = '', origin = null) {
         super(message, origin);
     }
@@ -165,6 +208,8 @@ class ExceptionUnsupportedMethod extends _Unsupported_js__WEBPACK_IMPORTED_MODUL
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ExceptionDatabase: () => (/* reexport safe */ _exception_Database_js__WEBPACK_IMPORTED_MODULE_7__["default"]),
+/* harmony export */   ExceptionDatabaseConnection: () => (/* reexport safe */ _exception_database_Connection_js__WEBPACK_IMPORTED_MODULE_8__["default"]),
 /* harmony export */   ExceptionExternal: () => (/* reexport safe */ _exception_External_js__WEBPACK_IMPORTED_MODULE_3__["default"]),
 /* harmony export */   ExceptionExternalHttp: () => (/* reexport safe */ _exception_external_Http_js__WEBPACK_IMPORTED_MODULE_4__["default"]),
 /* harmony export */   ExceptionInvalid: () => (/* reexport safe */ _exception_Invalid_js__WEBPACK_IMPORTED_MODULE_5__["default"]),
@@ -180,6 +225,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _exception_external_Http_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./exception/external/Http.js */ "../exception/src/exception/external/Http.js");
 /* harmony import */ var _exception_Invalid_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./exception/Invalid.js */ "../exception/src/exception/Invalid.js");
 /* harmony import */ var _exception_invalid_Input_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./exception/invalid/Input.js */ "../exception/src/exception/invalid/Input.js");
+/* harmony import */ var _exception_Database_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./exception/Database.js */ "../exception/src/exception/Database.js");
+/* harmony import */ var _exception_database_Connection_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./exception/database/Connection.js */ "../exception/src/exception/database/Connection.js");
+
+
+
 
 
 
@@ -197,6 +247,79 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "../fetch/src/Fetch.js":
+/*!*****************************!*\
+  !*** ../fetch/src/Fetch.js ***!
+  \*****************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Fetch)
+/* harmony export */ });
+class Fetch {
+    #url = null;
+
+    get url(){ return this.#url; }
+
+    constructor(url) {
+        this.#url = new URL(url);
+    }
+
+    async get(path, query = null) {
+        const parameters = query ? new URLSearchParams(query) : null;
+
+        const url = `${this.url.origin}${path ? path : this.url.pathname}${parameters ? `?${parameters.toString()}` : ''}`;
+
+        const response = await fetch(url, {
+            method: 'GET'
+        });
+
+        return {
+            status: response.status,
+            json: await response.json()
+        }
+    }
+
+    async post(path, body) {
+        console.log(body);
+
+        const url = `${this.url.origin}${path ? path : this.url.pathname}`;
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(body, null, 2)
+        });
+
+        return {
+            status: response.status,
+            json: await response.json()
+        }
+    }
+}
+
+/***/ }),
+
+/***/ "../fetch/src/index.js":
+/*!*****************************!*\
+  !*** ../fetch/src/index.js ***!
+  \*****************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Fetch_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Fetch.js */ "../fetch/src/Fetch.js");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Fetch_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+
+/***/ }),
+
 /***/ "./src/script/Backend.js":
 /*!*******************************!*\
   !*** ./src/script/Backend.js ***!
@@ -207,10 +330,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Backend)
 /* harmony export */ });
+/* harmony import */ var fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fetch */ "../fetch/src/index.js");
 
-class Backend {
-    static async post(path, body) {
-        
+
+class Backend extends fetch__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    constructor(url) {
+        super(url);
     }
 }
 
@@ -258,6 +383,8 @@ class BootstrapInput {
             if(!o.classList.contains('is-invalid')) {
                 o.classList.add('is-invalid');
             }
+
+            o.focus();
             
             throw new exception__WEBPACK_IMPORTED_MODULE_0__.ExceptionInvalidInput();
         }
@@ -354,8 +481,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const backend = new _script_Backend_js__WEBPACK_IMPORTED_MODULE_0__["default"]("http://localhost:8090/");
+
 async function subscribe(email) {
-    const response = await _script_Backend_js__WEBPACK_IMPORTED_MODULE_0__["default"].post('/subscribe', { email });
+    const response = await backend.post('/subscribe', { email });
 
     console.log(response);
 
@@ -365,7 +494,7 @@ async function subscribe(email) {
 const projectedby = {
     subscribe,
     bootstrap: _script_Bootstrap_js__WEBPACK_IMPORTED_MODULE_1__["default"],
-    backend: _script_Backend_js__WEBPACK_IMPORTED_MODULE_0__["default"]
+    backend
 };
 
 window.projectedby = projectedby;

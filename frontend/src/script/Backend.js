@@ -1,6 +1,7 @@
+import Fetch from "fetch";
 
-export default class Backend {
-    static async post(path, body) {
-        
+export default class Backend extends Fetch {
+    constructor(url) {
+        super(url);
     }
 }

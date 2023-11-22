@@ -1,11 +1,11 @@
 {
-  "name": "backend",
+  "name": "fetch",
   "version": "0.0.1",
-  "description": "ProjectedBy Content Management System Backend",
+  "description": "ProjectedBy CMS Fetch",
   "main": "./src/index.js",
   "type": "module",
+  "devDependencies": {},
   "scripts": {
-    "start": "node ./src/index.js",
     "test": "mocha --recursive"
   },
   "repository": {
@@ -15,20 +15,12 @@
   "keywords": [
     "ProjectedBy",
     "CMS",
-    "Backend",
-    "NodeJS",
-    "Javascript",
-    "Novemberizing"
+    "Fetch"
   ],
   "author": "novemberizing <novemberizing@gmail.com>",
   "license": "MPL-2.0",
   "bugs": {
     "url": "https://github.com/projectedby/cms/issues"
   },
-  "homepage": "https://github.com/projectedby/cms#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "mysql2": "^3.6.5"
-  }
+  "homepage": "https://github.com/projectedby/cms#readme"
 }

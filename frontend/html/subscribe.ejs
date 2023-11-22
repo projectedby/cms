@@ -53,7 +53,10 @@
         try {
             projectedby.bootstrap.input.validate(email);
 
-            await projectedby.subscribe(email.value);
+            if(await projectedby.subscribe(email.value)) {
+                console.log(history.length);
+                // projectedby.bootstrap.modal.open('success');
+            }
         } catch(e) {
             console.log(e);
         }

@@ -10,11 +10,14 @@ import Root from "./route/Root.js";
 
 import Module from "./Module.js";
 import { StorageExtensionContentManagementSystemWordpress } from "cms";
+import StorageExtensionDatabaseMysqlProjectedByAI from "./storage/extension/database/mysql/projectedby/AI.js";
 
 import Storage from "storage";
 
 Log.name = "backend";           // TODO: 설정에서 어플리케이션 이름을 삽입하도록 하자.
-Module.cms(new Storage(new StorageExtensionContentManagementSystemWordpress('http://localhost:8080/')));
+
+Module.cms = new Storage(new StorageExtensionContentManagementSystemWordpress('http://localhost:8080/'));
+Module.database = new Storage(new StorageExtensionDatabaseMysqlProjectedByAI('mysql://novemberizing@localhost:3306/projectedby_ai', 'melong@17'));
 
 const application = express();
 

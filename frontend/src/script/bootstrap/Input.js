@@ -8,6 +8,8 @@ export default class BootstrapInput {
             if(!o.classList.contains('is-invalid')) {
                 o.classList.add('is-invalid');
             }
+
+            o.focus();
             
             throw new ExceptionInvalidInput();
         }

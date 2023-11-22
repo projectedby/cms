@@ -4,7 +4,6 @@
   "description": "ProjectedBy Content Management System Storage Module",
   "main": "./src/index.js",
   "type": "module",
-  "devDependencies": {},
   "scripts": {
     "test": "mocha --recursive"
   },
@@ -25,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/projectedby/cms/issues"
   },
-  "homepage": "https://github.com/projectedby/cms#readme"
+  "homepage": "https://github.com/projectedby/cms#readme",
+  "dependencies": {
+    "mysql2": "^3.6.5"
+  }
 }
