@@ -2,9 +2,11 @@
     <h3 class="mb-5">
         <a href="<%- post.url %>" class="link-primary"><%= post.title %></a>
     </h3>
-    <%- post.content %>
+    <div class="px-3">
+        <%- post.content %>
+    </div>
     <div class="button mt-4" data-bb-id="<%- post.id %>">
-        <button type="button" class="btn btn-link" onClick="event => console.log(event)">
+        <button type="button" class="btn btn-link link-primary" onClick="event => console.log(event)">
             <i class="fa-solid fa-share-nodes"></i>
         </button>
     </div>

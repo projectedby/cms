@@ -15,7 +15,9 @@ export default class StorageExtensionContentManagementSystemWordpress extends St
 
     async getPost(o = null) {
         const rest_route = `/wp/v2/posts${o && o.id ? `/${o.id}` : ''}`;
-        if(o.id) delete o.id;
+        if(o) {
+            if(o.id) delete o.id;
+        }
         
         const response = await this.#http.get(null, Object.assign({ rest_route }, o));
 

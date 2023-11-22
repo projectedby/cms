@@ -8,7 +8,7 @@ const Post = express.Router();
 Post.get("/:id", async (req, res) => {
     try {
         const opengraph = new Opengraph('');
-        const view = 'post';
+        const view = 'single';
         const posts = await Module.backend.call('getPost', { id: req.params.id });
 
         if(posts.length > 0) {
