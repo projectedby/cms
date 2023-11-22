@@ -1,0 +1,46 @@
+{
+    "short_name": "Bubus",
+    "name": "비너스와 마르스의 끝없는 이야기",
+    "icons": [
+      {
+        "src": "/asset/icon/icon-vector.svg",
+        "type": "image/svg+xml",
+        "sizes": "150x150"
+      },
+      {
+        "src": "/asset/icon/icon-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/asset/icon/icon-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "id": "/?source=pwa",
+    "start_url": "/?source=pwa",
+    "background_color": "#FFFFFF",
+    "display_override": ["window-control-overlay", "minimal-ui"],
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#663399",
+    "shortcuts": [
+      {
+        "name": "비너스와 마르스의 끝없는 이야기",
+        "short_name": "부부스",
+        "description": "사랑하는 마음을 전하세요.",
+        "url": "/source=pwa",
+        "icons": [{ "src": "/asset/icon/mars_and_venus.png", "sizes": "256x256" }]
+      }
+    ],
+    "description": "부부들의 이야기를 전합니다.",
+    "screenshots": [
+      {
+        "src": "/asset/screenshot/screenshot-2023-09-15.png",
+        "type": "image/png",
+        "sizes": "430x771",
+        "form_factor": "narrow"
+      }
+    ]
+}

@@ -1,0 +1,61 @@
+<form id="subscription" class="needs-validation signin my-5" novalidate>
+    <!-- TITLE -->
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h1 class="fw-bold">Welcome</h1>
+            <p class="small">Thank for using our service</p>
+        </div>
+    </div>
+    <!-- TITLE -->
+    <!-- IMAGE -->
+    <div class="row mb-5">
+        <div class="col text-center">
+            <img width="160" src="/asset/image/undraw_subscribe_vspl.svg">
+        </div>
+    </div>
+    <!-- IMAGE -->
+    <!-- FORM -->
+    <div class="row p-4">
+        <div class="col">
+            <div class="row mb-5">
+                <div class="col">
+                    <label for="email" class="form-label small fw-bold">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="name@example.com" required>
+                    <div class="invalid-feedback">
+                        Please enter a email.
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FORM -->
+</form>
+<script type="module">
+    window.addEventListener('load', event => {
+        const email = document.getElementById('email');
+
+        projectedby.bootstrap.input.initialize(email);
+    });
+    
+
+    const subscription = document.getElementById('subscription');
+
+    subscription.addEventListener('submit', async event => {
+        event.preventDefault();
+
+        const email = document.getElementById('email');
+
+        try {
+            projectedby.bootstrap.input.validate(email);
+
+            await projectedby.subscribe(email.value);
+        } catch(e) {
+            console.log(e);
+        }
+    });
+</script>

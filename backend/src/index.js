@@ -9,12 +9,12 @@ import Root from "./route/Root.js";
 // import User from "./route/User.js";
 
 import Module from "./Module.js";
-import { StorateExtensionContentManagementSystemWordpress } from "cms";
+import { StorageExtensionContentManagementSystemWordpress } from "cms";
 
 import Storage from "storage";
 
 Log.name = "backend";           // TODO: 설정에서 어플리케이션 이름을 삽입하도록 하자.
-Module.cms(new Storage(new StorateExtensionContentManagementSystemWordpress()));
+Module.cms(new Storage(new StorageExtensionContentManagementSystemWordpress('http://localhost:8080/')));
 
 const application = express();
 

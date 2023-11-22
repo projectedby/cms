@@ -4,9 +4,7 @@
  * Copyright 2011-2023 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet');
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
@@ -11862,10 +11860,59 @@ textarea.form-control-lg {
   --bs-body-font-family: "Montserrat", "Noto Sans KR", sans-serif;
 }
 
+body > header > nav {
+  height: 100px;
+}
+
+body > footer {
+  height: 100px;
+}
+
+body > div.container {
+  min-height: calc(100vh - 200px);
+}
+
+body > div.container > form#subscription {
+  max-width: 300px;
+}
+
+p {
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
 /** --bs-breakpoint-xs */
 /** --bs-breakpoint-sm */
+@media (min-width: 576px) {
+  .container {
+    max-width: 500px;
+  }
+  body > header .container-fluid, body > header .container-sm, body > header .container-md, body > header .container-lg, body > header .container-xl, body > header .container-xxl {
+    max-width: 500px;
+  }
+}
 /** --bs-breakpoint-md */
+@media (min-width: 768px) {
+  .container {
+    max-width: 700px;
+  }
+  body > header .container-fluid, body > header .container-sm, body > header .container-md, body > header .container-lg, body > header .container-xl, body > header .container-xxl {
+    max-width: 700px;
+  }
+}
 /** --bs-breakpoint-lg */
+@media (min-width: 992px) {
+  .container {
+    max-width: 900px;
+  }
+  body > header .container-fluid, body > header .container-sm, body > header .container-md, body > header .container-lg, body > header .container-xl, body > header .container-xxl {
+    max-width: 900px;
+  }
+}
 /** --bs-breakpoint-xl */
 /** --bs-breakpoint-xxl */
 

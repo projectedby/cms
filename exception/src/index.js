@@ -6,6 +6,9 @@ import ExceptionUnsupportedMethod from "./exception/unsupported/Method.js";
 import ExceptionExternal from "./exception/External.js";
 import ExceptionExternalHttp from "./exception/external/Http.js";
 
+import ExceptionInvalid from "./exception/Invalid.js";
+import ExceptionInvalidInput from "./exception/invalid/Input.js";
+
 export default Exception;
 
 export {
@@ -13,5 +16,8 @@ export {
     ExceptionUnsupportedMethod,
 
     ExceptionExternal,
-    ExceptionExternalHttp
+    ExceptionExternalHttp,
+
+    ExceptionInvalid,
+    ExceptionInvalidInput
 }
