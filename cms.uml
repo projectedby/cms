@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XPD:PROJECT xmlns:XPD="http://www.staruml.com" version="1">
+<XPD:HEADER>
+<XPD:SUBUNITS>
+</XPD:SUBUNITS>
+<XPD:PROFILES>
+</XPD:PROFILES>
+</XPD:HEADER>
+<XPD:BODY>
+<XPD:OBJ name="DocumentElement" type="UMLProject" guid="jri5/INgMEuE21FqElz3VwAA">
+<XPD:ATTR name="Title" type="string">cms</XPD:ATTR>
+<XPD:ATTR name="Author" type="string">novemberizing &lt;novemberizing@gmail.com&gt;</XPD:ATTR>
+<XPD:ATTR name="#OwnedElements" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLPackage" guid="//HyZiqS7Ee/SR4flLeE6gAA">
+<XPD:ATTR name="Name" type="string">ProjectedBy</XPD:ATTR>
+<XPD:REF name="Namespace">jri5/INgMEuE21FqElz3VwAA</XPD:REF>
+<XPD:ATTR name="#OwnedElements" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLPackage" guid="yTNF7VsgN0e81Qc9YbXSFAAA">
+<XPD:ATTR name="Name" type="string">cms</XPD:ATTR>
+<XPD:REF name="Namespace">//HyZiqS7Ee/SR4flLeE6gAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:BODY>
+</XPD:PROJECT>
