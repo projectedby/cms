@@ -4,7 +4,8 @@
   "description": "ProjectedBy Content Management System",
   "main": "./src/index.js",
   "scripts": {
-    "test": "mocha --recursive"
+    "test": "mocha --recursive",
+    "test:static": "npm run test --workspace static"
   },
   "repository": {
     "type": "git",
