@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "ProjectedBy Content Management System Static Website Generator",
   "main": "./src/index.js",
+  "type": "module",
   "scripts": {
     "test": "mocha --recursive"
   },
@@ -25,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/projectedby/cms/issues"
   },
-  "homepage": "https://github.com/projectedby/cms#readme"
+  "homepage": "https://github.com/projectedby/cms#readme",
+  "dependencies": {
+    "showdown": "^2.1.0",
+    "yaml": "^2.3.4"
+  }
 }
