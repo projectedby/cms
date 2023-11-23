@@ -18,6 +18,11 @@
 <XPD:OBJ name="OwnedElements[0]" type="UMLPackage" guid="yTNF7VsgN0e81Qc9YbXSFAAA">
 <XPD:ATTR name="Name" type="string">cms</XPD:ATTR>
 <XPD:REF name="Namespace">//HyZiqS7Ee/SR4flLeE6gAA</XPD:REF>
+<XPD:ATTR name="#OwnedElements" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLPackage" guid="5boUUxmQBEmgziDIGmOskgAA">
+<XPD:ATTR name="Name" type="string">static</XPD:ATTR>
+<XPD:REF name="Namespace">yTNF7VsgN0e81Qc9YbXSFAAA</XPD:REF>
+</XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
