@@ -1,17 +1,12 @@
 #!/usr/bin/env node
 
 import minimist from "minimist";
-import url from "url";
 import path from "path";
 
 import Static from "../static/src/index.js";
-
-
 import { ExceptionUnsupportedCommand } from "../exception/src/index.js";
 
 const command = minimist(process.argv.slice(2));
-
-console.log(command);
 
 if(command._[0]==='static') {
     if(command._[1] === 'gen') {

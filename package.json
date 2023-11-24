@@ -1,6 +1,6 @@
 {
   "name": "@projectedby/cms",
-  "version": "0.0.6",
+  "version": "0.0.11",
   "description": "ProjectedBy Content Management System",
   "main": "./src/index.js",
   "type": "module",

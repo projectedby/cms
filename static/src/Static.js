@@ -24,6 +24,13 @@ export default class Static {
     }
 
     static async gen(theme, destination, pages, posts) {
+        // DIRECTORY 면 ...
+        try {
+            await fs.access(destination, fs.constants.F_OK)
+        } catch(e) {
+            await fs.mkdir(destination, { recursive: true });
+        }
+
         for(const f of await fs.readdir(destination)) {
             await fs.rm(path.resolve(destination, f), { recursive: true });
         }
