@@ -1,0 +1,9 @@
+/.github
+/docs
+/pages
+/.dockerignore
+/.gitignore
+/Dockerfile
+/TODO.md
+/cms.~ml
+/cms.uml

@@ -28,4 +28,4 @@ https://github.com/IonicaBizau/mdify
 
 EJS TO HTML
 
-### VIEW 폴더처럼 어떤 아이템도 없는 디렉토리를 제거한다.
+### VIEW 폴더처럼 어떤 아이템도 없는 디렉토리를 제거한다
