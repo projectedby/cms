@@ -40,7 +40,7 @@ export default class Static {
         for(const f of await fs.readdir(pages)) {
             if(path.extname(f) === '.md') {
                 const markdown = Markdown.parse(await fs.readFile(path.resolve(pages, f), { encoding: 'utf8' }));
-                const opengraph = new Opengraph('');
+                const opengraph = new Opengraph(markdown.metadata.opengraph);
 
                 const html = await ejs.renderFile(path.resolve(theme, markdown.metadata.layout + '.ejs'), {
                     opengraph,

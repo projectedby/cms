@@ -16,7 +16,7 @@ export default class Opengraph {
         
     };
 
-    constructor(url) {
-        this.url = url;
+    constructor(opengraph) {
+        Object.assign(this, opengraph);
     }
 }
