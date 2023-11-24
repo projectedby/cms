@@ -1,7 +1,13 @@
+### SASS
+
+```sh
+projectedby sass --source=[source] --destination=[destination]
+```
+
 ### STATIC
 
 ```sh
-projectedby cms gen --theme=[theme dir] --destination=[destination dir] --posts=[posts dir]
+projectedby static gen --theme=[theme dir] --destination=[destination dir] --posts=[posts dir]
 ```
 
 위와 같은 명령어로 정적 페이지를 만든다.
