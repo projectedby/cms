@@ -4,10 +4,10 @@ import minimist from "minimist";
 import url from "url";
 import path from "path";
 
-import Static from "static";
+import Static from "../static/src/index.js";
 
 
-import { ExceptionUnsupportedCommand } from "exception";
+import { ExceptionUnsupportedCommand } from "../exception/src/index.js";
 
 const command = minimist(process.argv.slice(2));
 
@@ -15,7 +15,7 @@ console.log(command);
 
 if(command._[0]==='static') {
     if(command._[1] === 'gen') {
-        const root = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "../");
+        const root = process.cwd();
 
         command.theme = path.resolve(root, command.theme);
         command.destination = path.resolve(root, command.destination);
