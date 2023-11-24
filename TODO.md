@@ -7,7 +7,7 @@ projectedby sass --source=[source] --destination=[destination]
 ### STATIC
 
 ```sh
-projectedby static gen --theme=[theme dir] --destination=[destination dir] --posts=[posts dir]
+projectedby static gen --theme=[theme dir] --destination=[destination dir] --posts=[posts dir] --pages=[pages dir]
 ```
 
 위와 같은 명령어로 정적 페이지를 만든다.
@@ -20,10 +20,12 @@ EJS 를 사용하면 EXPRESS 로 만들 수 있다.
 https://github.com/showdownjs/showdown
 https://github.com/IonicaBizau/mdify
 
-### 개발 진행
+### 개발 진행 | ok
 
 처음부터 완벽할 필요가 없다.
 
-### 싱글 페이지를 생성하는 것을 만든다.
+### 싱글 페이지를 생성하는 것을 만든다. | ok
 
 EJS TO HTML
+
+### VIEW 폴더처럼 어떤 아이템도 없는 디렉토리를 제거한다.

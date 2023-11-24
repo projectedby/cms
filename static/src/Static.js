@@ -28,7 +28,7 @@ export default class Static {
             await fs.rm(path.resolve(destination, f), { recursive: true });
         }
 
-        Static.#copy(theme, null, destination);
+        await Static.#copy(theme, null, destination);
 
         for(const f of await fs.readdir(pages)) {
             if(path.extname(f) === '.md') {

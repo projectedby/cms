@@ -3,10 +3,14 @@
   "version": "0.0.1",
   "description": "ProjectedBy Content Management System",
   "main": "./src/index.js",
+  "type": "module",
   "scripts": {
     "build:theme": "npm run build --workspace theme",
     "test": "mocha --recursive",
     "test:static": "npm run test --workspace static"
+  },
+  "bin": {
+    "projectedby": "./src/cli.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +31,10 @@
   "homepage": "https://github.com/projectedby/cms#readme",
   "workspaces": [
     "static",
-    "theme"
-  ]
+    "theme",
+    "exception"
+  ],
+  "dependencies": {
+    "minimist": "^1.2.8"
+  }
 }

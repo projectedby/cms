@@ -1,0 +1,26 @@
+{
+  "name": "exception",
+  "version": "0.0.1",
+  "description": "ProjectedBy Exception CMS",
+  "main": "./src/index.js",
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/projectedby/cms.git"
+  },
+  "keywords": [
+    "ProjectedBy",
+    "Exception",
+    "CMS"
+  ],
+  "author": "novemberizing <novemberizing@gmail.com>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/projectedby/cms/issues"
+  },
+  "homepage": "https://github.com/projectedby/cms#readme"
+}
