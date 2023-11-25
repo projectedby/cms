@@ -93,7 +93,7 @@
             <div class="row mb-5">
                 <div class="col">
                     <label for="email" class="form-label small fw-bold">Email</label>
-                    <input type="text" class="form-control" id="email" placeholder="name@example.com" required>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
                     <div class="invalid-feedback">
                         Please enter a email
                     </div>
@@ -113,18 +113,17 @@
 
     const email = document.getElementById('email');
 
-    
+    window.addEventListener('load', event => {
+        projectedby.bootstrap.input.on(email);
+        
+    }, { once: true });
 
     // projectedby.cms.bootstrap.input.on(email);
 
     subscription.addEventListener('submit', async event => {
         event.preventDefault();
 
-        console.log(projectedby);
-
-        // projectedby.bootstrap.
-
-        console.log(1);
+        projectedby.bootstrap.input.validate(email);
     });
 </script>
         </div>

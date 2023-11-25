@@ -1,5 +1,75 @@
 /******/ var __webpack_modules__ = ({
 
+/***/ "../exception/src/Exception.js":
+/*!*************************************!*\
+  !*** ../exception/src/Exception.js ***!
+  \*************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Exception)
+/* harmony export */ });
+
+class Exception extends Error {
+    #origin = null;
+
+    get origin(){ return this.#origin; }
+
+    constructor(message = '', origin = null) {
+        super(message);
+
+        this.#origin = origin;
+    }
+}
+
+
+/***/ }),
+
+/***/ "../exception/src/exception/Invalid.js":
+/*!*********************************************!*\
+  !*** ../exception/src/exception/Invalid.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ExceptionInvalid)
+/* harmony export */ });
+/* harmony import */ var _Exception_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Exception.js */ "../exception/src/Exception.js");
+
+
+class ExceptionInvalid extends _Exception_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    constructor(message = '', origin = null) {
+        super(message, origin);
+    }
+}
+
+
+/***/ }),
+
+/***/ "../exception/src/exception/invalid/Input.js":
+/*!***************************************************!*\
+  !*** ../exception/src/exception/invalid/Input.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ExceptionInvalidInput)
+/* harmony export */ });
+/* harmony import */ var _Invalid_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Invalid.js */ "../exception/src/exception/Invalid.js");
+
+
+class ExceptionInvalidInput extends _Invalid_js__WEBPACK_IMPORTED_MODULE_0__["default"] {
+    constructor(message = '', origin = null) {
+        super(message, origin);
+    }
+}
+
+
+/***/ }),
+
 /***/ "./src/Bootstrap.js":
 /*!**************************!*\
   !*** ./src/Bootstrap.js ***!
@@ -40,6 +110,7 @@ class ProjectedBy {
     static get bootstrap(){ return ProjectedBy.#bootstrap; }
 }
 
+
 /***/ }),
 
 /***/ "./src/bootstrap/Input.js":
@@ -52,9 +123,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ BootstrapInput)
 /* harmony export */ });
+/* harmony import */ var _exception_src_exception_invalid_Input_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../exception/src/exception/invalid/Input.js */ "../exception/src/exception/invalid/Input.js");
+
 
 class BootstrapInput {
-    
+    static on(o) {
+        o.addEventListener('change', event => {
+            if(o.classList.contains('is-invalid')) o.classList.remove('is-invalid');
+        });
+
+        o.addEventListener('keydown', event => {
+            if(o.classList.contains('is-invalid')) o.classList.remove('is-invalid');
+        });
+    }
+
+    static validate(o) {
+        if(o.validity.valid) return true;
+
+        if(!o.classList.contains('is-invalid')) o.classList.add('is-invalid');
+        o.focus();
+
+        throw new _exception_src_exception_invalid_Input_js__WEBPACK_IMPORTED_MODULE_0__["default"]();
+    }
 }
 
 /***/ })
