@@ -9,7 +9,7 @@ permalink: 'about.html'
 `ProjectedBy/CMS`는 텍스트, 이미지, 비디오, 오디오 등과 같은 디지털 콘텐츠를 생성, 편집, 게시하고 관리할 수 있도록 도움을 주는 `NodeJS` 기반으로 하는 소프트웨어입니다. `ProjectedBy/CMS`는 콘텐츠를 마크다운으로 작성하고, 빌드하면 콘텐츠를 생성할 수 있습니다.
 
 ```sh
-npx projectedby static gen --theme=[theme directory path]               \
+npx projectedby static gen --theme=[theme name]                         \
                            --destination=[destination directory path]   \
                            --posts=[posts directory path]               \
                            --pages=[pages direstory path]               \

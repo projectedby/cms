@@ -20,6 +20,13 @@ if(command._[0]==='static') {
         await Static.gen(command.theme, command.destination, command.pages, command.posts);
 
         process.exit();
+    } else if(command._[1] === 'theme') {
+        await Static.theme();
+        for(const theme of Static.themes.keys()) {
+            console.log(theme);
+        }
+
+        process.exit();
     }
 }
 

@@ -38,4 +38,16 @@ EJS TO HTML
 
 ### container 의 폼에서 
 
+### THEHE 입력 시에 테마 이름이 존재하면, ... 그 테마를 사용하도록 하자.
+
+### THEME 를 리스트업 하는 방법
+
+```
+npx projectecby theme --list
+```
+
+### STATIC ASYNC MAP
+
+
+
 

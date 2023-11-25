@@ -7,6 +7,10 @@ import Markdown from "./Markdown.js";
 import Opengraph from "./Opengraph.js";
 
 export default class Static {
+    static #themes = new Map();
+
+    static get themes(){ return Static.#themes; }
+
     static async #copy(root, source, destination) {
         const current = path.resolve(root, source ? source : './');
         for(const f of await fs.readdir(current)) {
@@ -24,9 +28,11 @@ export default class Static {
     }
 
     static async gen(theme, destination, pages, posts) {
+        await Static.theme();
+
         // DIRECTORY 면 ...
         try {
-            await fs.access(destination, fs.constants.F_OK)
+            await fs.access(destination, fs.constants.F_OK);
         } catch(e) {
             await fs.mkdir(destination, { recursive: true });
         }
@@ -35,7 +41,7 @@ export default class Static {
             await fs.rm(path.resolve(destination, f), { recursive: true });
         }
 
-        await Static.#copy(theme, null, destination);
+        await Static.#copy(`theme`, null, destination);
 
         for(const f of await fs.readdir(pages)) {
             if(path.extname(f) === '.md') {
@@ -68,6 +74,34 @@ export default class Static {
 
                 await fs.mkdir(path.dirname(position), { recursive: true });
                 await fs.writeFile(position, html, { encoding: 'utf8' });
+            }
+        }
+    }
+
+    static async theme() {
+        Static.#themes.clear();
+
+        try {
+            await fs.access(path.resolve(process.cwd(), './node_modules/@projectedby/cms/theme'), fs.constants.F_OK);
+
+            for(const f of await fs.readdir(path.resolve(process.cwd(), './node_modules/@projectedby/cms/theme'))) {
+                const stat = await fs.stat(path.resolve(process.cwd(), `./node_modules/@projectedby/cms/theme/${f}`));
+                if(stat.isDirectory()) {
+                    if(f !== 'scss' && f !== 'src' && f !=='webpack') {
+                        Static.#themes.set(f, path.resolve(process.cwd(), `./node_modules/@projectedby/cms/theme/${f}`));
+                    }
+                }
+            }
+        } catch(e) {
+            
+        }
+
+        for(const f of await fs.readdir(path.resolve(process.cwd(), './theme'))) {
+            const stat = await fs.stat(path.resolve(process.cwd(), `./theme/${f}`));
+            if(stat.isDirectory()) {
+                if(f !== 'scss' && f !== 'src' && f !=='webpack') {
+                    Static.#themes.set(f, path.resolve(process.cwd(), `./theme/${f}`));
+                }
             }
         }
     }
