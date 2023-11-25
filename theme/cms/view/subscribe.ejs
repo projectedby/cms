@@ -1,0 +1,68 @@
+<form id="subscription" class="needs-validation subscription" novalidate>
+    <!-- TITLE -->
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h1 class="fw-bold">
+                Subscribe newsletter
+                <!-- TODO: 좋은 것을 어떻게 해결해야 할까? -->
+            </h1>
+            <p class="small">
+                Join our subscribers list to get latest news, updates
+            </p>
+        </div>
+    </div>
+    <!-- TITLE -->
+    <!-- IMAGE -->
+    <div class="row mb-5">
+        <div class="col text-center">
+            <img width="160" src="/asset/image/subscribe.svg">
+        </div>
+    </div>
+    <!-- IMAGE -->
+    <!-- HORIZONTAL -->
+    <div class="row mb-2">
+        <div class="col">
+            <hr />
+        </div>
+    </div>
+    <!-- HORIZONTAL -->
+    <!-- FORM -->
+    <div class="row p-4">
+        <div class="col">
+            <div class="row mb-5">
+                <div class="col">
+                    <label for="email" class="form-label small fw-bold">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="name@example.com" required>
+                    <div class="invalid-feedback">
+                        Please enter a email
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FORM -->
+</form>
+<script type="module">
+    const subscription = document.getElementById('subscription');
+
+    const email = document.getElementById('email');
+
+    
+
+    // projectedby.cms.bootstrap.input.on(email);
+
+    subscription.addEventListener('submit', async event => {
+        event.preventDefault();
+
+        console.log(projectedby);
+
+        // projectedby.bootstrap.
+
+        console.log(1);
+    });
+</script>

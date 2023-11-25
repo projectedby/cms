@@ -3,10 +3,15 @@
   "version": "0.0.1",
   "description": "ProjectedBy Content Management System Theme",
   "main": "./src/index.js",
-  "devDependencies": {},
+  "type": "module",
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
   "scripts": {
-    "build": "npm run build:cms",
-    "build:cms": "sass ./scss/cms.scss ./cms/asset/css/cms.css",
+    "build": "npm run build:css && npm run build:javascript",
+    "build:javascript": "webpack --config webpack/config/dev.js",
+    "build:css": "sass scss/cms.scss cms/asset/css/cms.css",
     "test": "mocha --recursive"
   },
   "repository": {

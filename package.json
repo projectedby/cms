@@ -32,7 +32,8 @@
   "workspaces": [
     "static",
     "theme",
-    "exception"
+    "exception",
+    "script"
   ],
   "dependencies": {
     "ejs": "^3.1.9",

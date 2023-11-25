@@ -13,7 +13,7 @@
         <meta property="og:title" content="ProjectedBy/CMS">
         <meta property="og:image" content="/asset/image/opengraph/default.jpg">
         <meta property="og:description" content="컨텐츠 관리 시스템">
-        <meta property="og:site_name" content="ProjectedBy/CMS">
+        <meta property="og:site_name" content="ProjectedBy/AI">
         <meta property="og:locale" content="ko_KR">
         <meta property="og:image:width" content="869">
         <meta property="og:image:height" content="701">
@@ -41,9 +41,9 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <div class="navbar-left d-flex justify-content-start align-items-center">
-                <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
-                    <img src="/asset/image/icon/48/favicon.png" alt="ProjectedBy/CMS" width="24" height="24" class="me-2">
-                    ProjectedBy/CMS
+                <a class="navbar-brand fw-bold d-flex align-items-center" href="">
+                    <img src="/asset/image/icon/48/favicon.png" alt="ProjectedBy/AI" width="24" height="24" class="me-2">
+                    ProjectedBy/AI
                 </a>
                 <span style="font-size: .75rem;">
                     We deliver news related to artificial intelligence.
@@ -59,7 +59,74 @@
 </header>
 <!-- HEADER -->
         <div class="container pt-4 d-flex justify-content-center align-items-center">
-            HELLO WORLD
+            <form id="subscription" class="needs-validation subscription" novalidate>
+    <!-- TITLE -->
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h1 class="fw-bold">
+                Subscribe newsletter
+                <!-- TODO: 좋은 것을 어떻게 해결해야 할까? -->
+            </h1>
+            <p class="small">
+                Join our subscribers list to get latest news, updates
+            </p>
+        </div>
+    </div>
+    <!-- TITLE -->
+    <!-- IMAGE -->
+    <div class="row mb-5">
+        <div class="col text-center">
+            <img width="160" src="/asset/image/subscribe.svg">
+        </div>
+    </div>
+    <!-- IMAGE -->
+    <!-- HORIZONTAL -->
+    <div class="row mb-2">
+        <div class="col">
+            <hr />
+        </div>
+    </div>
+    <!-- HORIZONTAL -->
+    <!-- FORM -->
+    <div class="row p-4">
+        <div class="col">
+            <div class="row mb-5">
+                <div class="col">
+                    <label for="email" class="form-label small fw-bold">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="name@example.com" required>
+                    <div class="invalid-feedback">
+                        Please enter a email
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FORM -->
+</form>
+<script type="module">
+    const subscription = document.getElementById('subscription');
+
+    const email = document.getElementById('email');
+
+    
+
+    // projectedby.cms.bootstrap.input.on(email);
+
+    subscription.addEventListener('submit', async event => {
+        event.preventDefault();
+
+        console.log(projectedby);
+
+        // projectedby.bootstrap.
+
+        console.log(1);
+    });
+</script>
         </div>
         <!-- FOOTER -->
 <footer class="p-5 bg-body-tertiary">
