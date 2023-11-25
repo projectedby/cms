@@ -91,6 +91,26 @@ class Bootstrap {
 
 /***/ }),
 
+/***/ "./src/ContentManagementSystem.js":
+/*!****************************************!*\
+  !*** ./src/ContentManagementSystem.js ***!
+  \****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ContentManagementSystem)
+/* harmony export */ });
+
+
+class ContentManagementSystem {
+    static subscribe(email) {
+        console.log(email);
+    }
+}
+
+/***/ }),
+
 /***/ "./src/ProjectedBy.js":
 /*!****************************!*\
   !*** ./src/ProjectedBy.js ***!
@@ -102,12 +122,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ ProjectedBy)
 /* harmony export */ });
 /* harmony import */ var _Bootstrap_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Bootstrap.js */ "./src/Bootstrap.js");
+/* harmony import */ var _ContentManagementSystem_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ContentManagementSystem.js */ "./src/ContentManagementSystem.js");
+
 
 
 class ProjectedBy {
     static #bootstrap = _Bootstrap_js__WEBPACK_IMPORTED_MODULE_0__["default"];
+    static #cms = _ContentManagementSystem_js__WEBPACK_IMPORTED_MODULE_1__["default"];
 
     static get bootstrap(){ return ProjectedBy.#bootstrap; }
+
+    static get cms(){ return ProjectedBy.#cms; }
 }
 
 

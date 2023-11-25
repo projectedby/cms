@@ -11938,6 +11938,8 @@ section.post > div.button .btn-link {
 body > div.container > form.subscription {
   max-width: 300px;
   width: 300px;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 
 /** --bs-breakpoint-xs */

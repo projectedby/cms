@@ -44,6 +44,7 @@ export default class Static {
 
                 const html = await ejs.renderFile(path.resolve(theme, markdown.metadata.layout + '.ejs'), {
                     opengraph,
+                    html: markdown.html,
                     view: markdown.metadata.view
                 });
 
@@ -54,10 +55,13 @@ export default class Static {
         for(const f of await fs.readdir(posts)) {
             if(path.extname(f) === '.md') {
                 const markdown = Markdown.parse(await fs.readFile(path.resolve(posts, f), { encoding: 'utf8' }));
-                const opengraph = new Opengraph('');
+                const opengraph = new Opengraph(markdown.metadata.opengraph);
+
+                console.log(markdown);
 
                 const html = await ejs.renderFile(path.resolve(theme, markdown.metadata.layout + '.ejs'), {
                     opengraph,
+                    html: markdown.html,
                     view: markdown.metadata.view
                 });
                 const position = path.resolve(destination, `.${markdown.metadata.permalink}`);

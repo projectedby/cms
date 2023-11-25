@@ -27,7 +27,7 @@
     </div>
     <!-- HORIZONTAL -->
     <!-- FORM -->
-    <div class="row p-4">
+    <div class="row pt-4">
         <div class="col">
             <div class="row mb-5">
                 <div class="col">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mb-5">
+            <div class="row">
                 <div class="col d-grid gap-2">
                     <button type="submit" class="btn btn-primary">Subscribe</button>
                 </div>
@@ -63,5 +63,9 @@
         event.preventDefault();
 
         projectedby.bootstrap.input.validate(email);
+
+        projectedby.cms.subscribe(email);
+
+        console.log("register");
     });
 </script>

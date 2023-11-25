@@ -13,7 +13,7 @@
     <body>
         <%- include('header.ejs') %>
         <div class="container p-0 d-flex justify-content-center align-items-center">
-            <%- include('view/' + view) %>
+            <%- include('view/' + view, { html }) %>
         </div>
         <%- include('footer.ejs') %>
         <%- include('modal.ejs') %>
