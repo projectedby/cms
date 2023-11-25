@@ -11858,7 +11858,9 @@ textarea.form-control-lg {
   }
 }
 div.markdown {
-  padding: 32px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 32px;
 }
 
 div.markdown > h1, div.markdown > .h1 {
