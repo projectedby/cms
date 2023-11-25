@@ -26,6 +26,22 @@ body > header > nav > .container-fluid {
     justify-content: space-between;
 }
 
+body > footer > div.container {
+    min-height: 100px;
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+}
+
+body > div.container {
+    min-height: calc(100vh - 200px);
+}
+
+body > footer > div.container > div.row {
+    width: 100%;
+}
+
 p {
     padding: 0px;
     margin: 0px;

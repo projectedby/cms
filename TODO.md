@@ -29,3 +29,7 @@ https://github.com/IonicaBizau/mdify
 EJS TO HTML
 
 ### VIEW 폴더처럼 어떤 아이템도 없는 디렉토리를 제거한다
+
+### 소셜 로그인으로 구독을 할 수 있도록 한다.
+
+### ABOUT PAGE 생성
