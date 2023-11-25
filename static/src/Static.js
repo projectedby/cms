@@ -41,14 +41,14 @@ export default class Static {
             await fs.rm(path.resolve(destination, f), { recursive: true });
         }
 
-        await Static.#copy(`theme`, null, destination);
+        await Static.#copy(path.resolve(process.cwd(), Static.#themes.get(theme)), null, destination);
 
         for(const f of await fs.readdir(pages)) {
             if(path.extname(f) === '.md') {
                 const markdown = Markdown.parse(await fs.readFile(path.resolve(pages, f), { encoding: 'utf8' }));
                 const opengraph = new Opengraph(markdown.metadata.opengraph);
 
-                const html = await ejs.renderFile(path.resolve(theme, markdown.metadata.layout + '.ejs'), {
+                const html = await ejs.renderFile(path.resolve(path.resolve(process.cwd(), Static.#themes.get(theme)), markdown.metadata.layout + '.ejs'), {
                     opengraph,
                     html: markdown.html,
                     view: markdown.metadata.view
@@ -63,9 +63,7 @@ export default class Static {
                 const markdown = Markdown.parse(await fs.readFile(path.resolve(posts, f), { encoding: 'utf8' }));
                 const opengraph = new Opengraph(markdown.metadata.opengraph);
 
-                console.log(markdown);
-
-                const html = await ejs.renderFile(path.resolve(theme, markdown.metadata.layout + '.ejs'), {
+                const html = await ejs.renderFile(path.resolve(path.resolve(process.cwd(), Static.#themes.get(theme)), markdown.metadata.layout + '.ejs'), {
                     opengraph,
                     html: markdown.html,
                     view: markdown.metadata.view
@@ -88,7 +86,7 @@ export default class Static {
                 const stat = await fs.stat(path.resolve(process.cwd(), `./node_modules/@projectedby/cms/theme/${f}`));
                 if(stat.isDirectory()) {
                     if(f !== 'scss' && f !== 'src' && f !=='webpack') {
-                        Static.#themes.set(f, path.resolve(process.cwd(), `./node_modules/@projectedby/cms/theme/${f}`));
+                        Static.#themes.set(f, `./node_modules/@projectedby/cms/theme/${f}`);
                     }
                 }
             }
@@ -100,7 +98,7 @@ export default class Static {
             const stat = await fs.stat(path.resolve(process.cwd(), `./theme/${f}`));
             if(stat.isDirectory()) {
                 if(f !== 'scss' && f !== 'src' && f !=='webpack') {
-                    Static.#themes.set(f, path.resolve(process.cwd(), `./theme/${f}`));
+                    Static.#themes.set(f, `./theme/${f}`);
                 }
             }
         }

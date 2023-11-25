@@ -12,7 +12,6 @@ if(command._[0]==='static') {
     if(command._[1] === 'gen') {
         const root = process.cwd();
 
-        command.theme = path.resolve(root, command.theme);
         command.destination = path.resolve(root, command.destination);
         command.pages = path.resolve(root, command.pages || "./pages");
         command.posts = path.resolve(root, command.posts || "./posts");
