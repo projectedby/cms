@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/favicon.png" rel="icon">
+        <link href="/favicon.ico" rel="icon">
         <link href="/asset/image/icon/180/favicon.png" rel="apple-touch-icon">
         <title>ProjectedBy/CMS</title>
         <!-- <link rel="manifest" href="/manifest.json"> -->
@@ -13,7 +13,7 @@
         <meta property="og:title" content="ProjectedBy/CMS">
         <meta property="og:image" content="/asset/image/opengraph/default.jpg">
         <meta property="og:description" content="컨텐츠 관리 시스템">
-        <meta property="og:site_name" content="ProjectedBy/CMS">
+        <meta property="og:site_name" content="ProjectedBy/Sub">
         <meta property="og:locale" content="ko_KR">
         <meta property="og:image:width" content="869">
         <meta property="og:image:height" content="701">
@@ -42,11 +42,11 @@
         <div class="container-fluid">
             <div class="navbar-left d-flex justify-content-start align-items-center">
                 <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
-                    <img src="/asset/image/icon/48/favicon.png" alt="ProjectedBy/CMS" width="24" height="24" class="me-2">
-                    ProjectedBy/CMS
+                    <img src="/asset/image/icon/48/favicon.png" alt="ProjectedBy/Sub" width="24" height="24" class="me-2">
+                    ProjectedBy/Sub
                 </a>
                 <span style="font-size: .75rem;">
-                    We deliver news related to artificial intelligence.
+                    인공지능과 프로그래밍과 관련된 소식을 전달해 드립니다.
                 </span>
             </div>
             <div class="navbar-right d-flex justify-content-end align-items-center">
@@ -60,53 +60,15 @@
 <!-- HEADER -->
         <div class="container p-0 d-flex justify-content-center align-items-center">
             <div class="markdown">
-    <h1 id="projectedbycms">ProjectedBy/CMS</h1>
-<p><code>ProjectedBy/CMS</code>는 텍스트, 이미지, 비디오, 오디오 등과 같은 디지털 콘텐츠를 생성, 편집, 게시하고 관리할 수 있도록 도움을 주는 <code>NodeJS</code> 기반으로 하는 소프트웨어입니다. <code>ProjectedBy/CMS</code>는 콘텐츠를 마크다운으로 작성하고, 빌드하면 콘텐츠를 생성할 수 있습니다.</p>
-<pre><code class="sh language-sh">npx projectedby static gen --theme=[theme name]                         \
-                           --destination=[destination directory path]   \
-                           --posts=[posts directory path]               \
-                           --pages=[pages direstory path]               \
-                           --asset=[asset directory path]
-</code></pre>
-<p><sub><code>ProjectedBy/CMS</code>를 통해서 전체 컨텐츠를 생성하는 쉡 스크립트</sub></p>
-<p><code>ProjectedBy/CMS</code>를 사용하시려면, 먼저 <code>Theme</code>를 작성하셔야 합니다. <code>Theme</code>는 웹 페이지 생성을 위해서 만들어진 템플릿으로 마크다운을 작성할 때 </p>
-<h2 id="theme">Theme</h2>
-<p><code>ProjectedBy/CMS</code>의 테마는 <code>ejs</code>를 기반으로 하여 작성합니다.</p>
-<!-- 
-컨텐츠 관리 시스템입니다.
-
-
-콘텐츠 관리 시스템(CMS)은 텍스트, 이미지, 비디오, 오디오 등과 같은 디지털 콘텐츠를 생성, 편집, 게시하고 관리하는 데 사용되는 소프트웨어입니다. CMS는 비즈니스, 교육, 정부 등 다양한 분야에서 사용되며, 웹사이트, 블로그, 포털, 커뮤니티, 전자상거래 플랫폼 등 다양한 유형의 콘텐츠를 관리하는 데 사용됩니다.
-
-CMS의 주요 기능은 다음과 같습니다.
-
-콘텐츠 생성 및 편집: CMS는 다양한 템플릿과 도구를 제공하여 사용자가 쉽게 콘텐츠를 생성하고 편집할 수 있도록 합니다.
-콘텐츠 관리: CMS는 콘텐츠의 저장, 검색, 액세스, 권한 관리 등을 지원하여 효율적으로 콘텐츠를 관리할 수 있도록 합니다.
-콘텐츠 분석: CMS는 콘텐츠의 조회수, 참여도, 전환율 등을 분석하여 콘텐츠의 효과를 측정할 수 있도록 합니다.
-CMS는 다음과 같은 장점을 제공합니다.
-
-비전문가도 쉽게 사용할 수 있습니다.
-콘텐츠 관리의 효율성을 높일 수 있습니다.
-콘텐츠의 효과를 측정할 수 있습니다.
-CMS는 크게 오픈 소스 CMS와 상용 CMS로 나눌 수 있습니다. 오픈 소스 CMS는 무료로 사용할 수 있지만, 전문적인 지식이 필요할 수 있습니다. 상용 CMS는 유료로 사용할 수 있지만, 다양한 기능과 지원을 제공합니다.
-
-대표적인 오픈 소스 CMS로는 워드프레스, 드루팔, 줌라 등이 있습니다. 대표적인 상용 CMS로는 오픈소스 기반의 워드프레스닷컴과 드루팔닷컴, 전용 플랫폼 기반의 쇼피파이 등이 있습니다.
-
-CMS는 디지털 콘텐츠 관리의 필수 도구로, 다양한 분야에서 폭넓게 사용되고 있습니다.
-
-
-ProjectedBy 에서 제공하는 컨텐츠 관리 시스템입니다.
-
-
-세컨 브러쉬 | Second Brush
-생성 AI의 등장은 창작자를 향한 위협이라기보단 새로운 도구의 등장과 기회가 될 수 있습니다.
-”세컨브러쉬(Second Brush)”라는 이름처럼, 생성 AI는 기존 창작자와 창작을 시도하려는 분에게 새로운 도구로써, 혹은 조수로써 창작활동을 도울 것입니다.
-생성 AI가 어렵게 느껴지셨거나 보다 양질의 정보를 원하시는 분들을 위해 Second Brush는 아래와 같이 뉴스레터와 강의를 운영하고 있습니다.
- 뉴스레터 ‘Daily Prompt’ [구독하기]
-범람하는 AI 소식에서 길을 잃지 않도록, 발행인이 직접 매일 큐레이션하여 발송합니다.
- 생성AI 활용법 강의 [강의 목록]
-경험에서 우러나온 양질의 노하우를 공유하며, 단순 활용법 뿐만 아니라 앞으로의 동향까지도 전달합니다.
- 카카오톡 문의 [문의하기] -->
+    <h1 id="projectedbysub">ProjectedBy/Sub</h1>
+<p><a href="/">ProjectedBy/Sub</a>는 마크다운 파일로부터 컨텐츠를 생성, 편집하고 그를 게시할 수 있도록 도움을 주는 <a href="https://github.com/projectedby/cms">ProjectedBy/CMS</a>를 이용하여 다양한 정보를 구독을 할 수 있는 웹 서비스입니다. 구독을 원하면 <a href="/subscribe.html">구독하기</a>를 방문하셔서 이메일을 기입하시고 구독 버튼을 클릭해주시면 됩니다.</p>
+<h2 id="projectedbysub-1">ProjectedBy/Sub를 통하여 받을 수 있는 소식</h2>
+<ul>
+<li>인공지능 뉴스</li>
+<li>인공지능 논문 요약</li>
+<li>인공지능 수학</li>
+<li>프로그래밍 팁</li>
+</ul>
 </div>
 
         </div>

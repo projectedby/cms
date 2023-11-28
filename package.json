@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build:theme": "npm run build --workspace theme",
-    "build:cms": "npx projectedby static gen --theme=theme/cms --destination=docs",
+    "build:cms": "npx projectedby static gen --theme=cms --destination=docs",
     "build": "npm run build:theme && npm run build:cms",
     "test": "mocha --recursive",
     "test:static": "npm run test --workspace static"

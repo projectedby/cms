@@ -4,7 +4,8 @@ view: subscribe
 permalink: subscribe.html
 opengraph:
     site:
-        name: 'ProjectedBy/AI'
+        name: 'ProjectedBy/Sub'
+        url: '/'
 ---
 
 HELLO INDEX
