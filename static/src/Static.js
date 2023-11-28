@@ -44,6 +44,7 @@ export default class Static {
         await Static.#copy(path.resolve(process.cwd(), Static.#themes.get(theme)), null, destination);
 
         const articles = [];
+
         for(const f of await fs.readdir(posts)) {
             if(path.extname(f) === '.md') {
                 const markdown = Markdown.parse(await fs.readFile(path.resolve(posts, f), { encoding: 'utf8' }));
@@ -61,6 +62,7 @@ export default class Static {
                 const html = await ejs.renderFile(path.resolve(path.resolve(process.cwd(), Static.#themes.get(theme)), markdown.metadata.layout + '.ejs'), {
                     opengraph,
                     posts: articles,
+                    markdown,
                     html: markdown.html,
                     view: markdown.metadata.view
                 });
@@ -73,6 +75,7 @@ export default class Static {
             const html = await ejs.renderFile(path.resolve(path.resolve(process.cwd(), Static.#themes.get(theme)), markdown.metadata.layout + '.ejs'), {
                 opengraph,
                 posts: articles,
+                markdown,
                 html: markdown.html,
                 view: markdown.metadata.view
             });

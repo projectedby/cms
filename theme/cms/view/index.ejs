@@ -1,4 +1,1 @@
-<div class="markdown">
-    <!-- 에러 핸들링 -->
-    <%- posts[0].markdown.html %>
-</div>
+<%- include('post.ejs', { markdown: posts[0].markdown, html: posts[0].markdown.html }) %>
