@@ -43,6 +43,16 @@ export default class Static {
 
         await Static.#copy(path.resolve(process.cwd(), Static.#themes.get(theme)), null, destination);
 
+        const articles = [];
+        for(const f of await fs.readdir(posts)) {
+            if(path.extname(f) === '.md') {
+                const markdown = Markdown.parse(await fs.readFile(path.resolve(posts, f), { encoding: 'utf8' }));
+                const opengraph = new Opengraph(markdown.metadata.opengraph);
+
+                articles.push({ markdown, opengraph });
+            }
+        }
+
         for(const f of await fs.readdir(pages)) {
             if(path.extname(f) === '.md') {
                 const markdown = Markdown.parse(await fs.readFile(path.resolve(pages, f), { encoding: 'utf8' }));
@@ -50,6 +60,7 @@ export default class Static {
 
                 const html = await ejs.renderFile(path.resolve(path.resolve(process.cwd(), Static.#themes.get(theme)), markdown.metadata.layout + '.ejs'), {
                     opengraph,
+                    posts: articles,
                     html: markdown.html,
                     view: markdown.metadata.view
                 });
@@ -58,21 +69,32 @@ export default class Static {
             }
         }
 
-        for(const f of await fs.readdir(posts)) {
-            if(path.extname(f) === '.md') {
-                const markdown = Markdown.parse(await fs.readFile(path.resolve(posts, f), { encoding: 'utf8' }));
-                const opengraph = new Opengraph(markdown.metadata.opengraph);
+        for(const { markdown, opengraph } of articles) {            
+            const html = await ejs.renderFile(path.resolve(path.resolve(process.cwd(), Static.#themes.get(theme)), markdown.metadata.layout + '.ejs'), {
+                opengraph,
+                posts: articles,
+                html: markdown.html,
+                view: markdown.metadata.view
+            });
 
-                const html = await ejs.renderFile(path.resolve(path.resolve(process.cwd(), Static.#themes.get(theme)), markdown.metadata.layout + '.ejs'), {
-                    opengraph,
-                    html: markdown.html,
-                    view: markdown.metadata.view
-                });
-                const position = path.resolve(destination, `.${markdown.metadata.permalink}`);
+            const position = path.resolve(destination, `.${markdown.metadata.permalink}`);
 
-                await fs.mkdir(path.dirname(position), { recursive: true });
-                await fs.writeFile(position, html, { encoding: 'utf8' });
-            }
+            await fs.mkdir(path.dirname(position), { recursive: true });
+            await fs.writeFile(position, html, { encoding: 'utf8' });
+
+            // if(path.extname(f) === '.md') {
+            //     const markdown = Markdown.parse(await fs.readFile(path.resolve(posts, f), { encoding: 'utf8' }));
+            //     const opengraph = new Opengraph(markdown.metadata.opengraph);
+
+            //     const html = await ejs.renderFile(path.resolve(path.resolve(process.cwd(), Static.#themes.get(theme)), markdown.metadata.layout + '.ejs'), {
+            //         opengraph,
+            //         posts: [],
+            //         html: markdown.html,
+            //         view: markdown.metadata.view
+            //     });
+
+                
+            // }
         }
     }
 

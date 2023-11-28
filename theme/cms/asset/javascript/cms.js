@@ -162,6 +162,7 @@ class Firebase {
         appId: "1:997313119928:web:894a2949463705d6fd964d",
         measurementId: "G-VZ51NY0GG1"
     };
+
     static #application = (0,https_www_gstatic_com_firebasejs_10_7_0_firebase_app_js__WEBPACK_IMPORTED_MODULE_0__.initializeApp)(Firebase.#config);
     static #analytics = (0,https_www_gstatic_com_firebasejs_10_7_0_firebase_analytics_js__WEBPACK_IMPORTED_MODULE_1__.getAnalytics)(Firebase.#application);
 
