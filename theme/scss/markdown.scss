@@ -8,6 +8,12 @@ div.markdown > h1 {
     font-weight: 700;
     padding-top: 32px;
     padding-bottom: 8px;
+
+    font-size: 1.5rem;
+}
+
+div.markdown > h1 > a {
+    text-decoration: none;
 }
 
 div.markdown > h2 {
@@ -16,6 +22,49 @@ div.markdown > h2 {
     padding-bottom: 8px;
 
     margin-left: 8px;
+
+    font-size: 1.4rem;
+}
+
+div.markdown > h2 + p {
+    margin-bottom: 16px;
+}
+
+div.markdown > h2 + p > a {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+div.markdown > h2 + p > date {
+    font-size: .6rem;
+    font-weight: 700;
+}
+
+div.markdown > h2 + p > author {
+    font-size: .6rem;
+    font-weight: 700;
+}
+
+div.markdown > h2 + p > author > a {
+    text-decoration: none;
+}
+
+div.markdown > ul {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+div.markdown > ul > li {
+    font-size: .8rem;
+}
+
+div.markdown > ol {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+div.markdown > ol > li {
+    font-size: .8rem;
 }
 
 div.markdown > h3 {
@@ -24,6 +73,8 @@ div.markdown > h3 {
     padding-bottom: 8px;
 
     margin-left: 8px;
+
+    font-size: 1.3rem;
 }
 
 div.markdown > h4 {
@@ -32,6 +83,8 @@ div.markdown > h4 {
     padding-bottom: 8px;
 
     margin-left: 8px;
+
+    font-size: 1.2rem;
 }
 
 div.markdown > h5 {
@@ -40,6 +93,8 @@ div.markdown > h5 {
     padding-bottom: 8px;
 
     margin-left: 8px;
+
+    font-size: 1.1rem;
 }
 
 div.markdown > h6 {
@@ -48,12 +103,16 @@ div.markdown > h6 {
     padding-bottom: 8px;
 
     margin-left: 8px;
+
+    font-size: 1rem;
 }
 
 div.markdown > p {
-    padding-top: 8px;
-    padding-bottom: 4px;
-    padding-left: 8px;
+    padding: 0px;
+    margin-bottom: 4px;
+
+    margin-left: 16px;
+    font-size: .8rem;
 }
 
 div.markdown > pre {
