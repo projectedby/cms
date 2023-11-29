@@ -1,7 +1,11 @@
 <div class="markdown <%- markdown.metadata.category %>">
     <%- html %>
     <div class="button text-end small fw-bold my-5">
-        <a href="#" onclick="return projectedby.share({text: 'hello world'});" class="me-2">
+        <a href="#" onclick="return projectedby.share({
+            text: '<%- markdown.metadata.description %>',
+            title: '<%- markdown.metadata.title %>',
+            url: '<%- markdown.metadata.permalink %>'
+        });" class="me-2">
             <i class="fa-solid fa-share"></i>
             Share
         </a>

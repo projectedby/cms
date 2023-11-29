@@ -17,7 +17,8 @@ export default class ProjectedBy {
             return false;
         }
 
-        navigator.share(data);
+        navigator.share(data)
+                 .catch(e => console.log(e));
 
         return false;
     }
