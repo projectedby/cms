@@ -50,6 +50,8 @@ export default class Static {
                 const markdown = Markdown.parse(await fs.readFile(path.resolve(posts, f), { encoding: 'utf8' }));
                 const opengraph = new Opengraph(markdown.metadata.opengraph);
 
+                markdown.html = `<h1><a href="${markdown.metadata.permalink}">${markdown.metadata.title}</a></h1>` + markdown.html;
+
                 articles.push({ markdown, opengraph });
             }
         }
@@ -79,7 +81,7 @@ export default class Static {
             }
         }
 
-        for(const { markdown, opengraph } of articles) {            
+        for(const { markdown, opengraph } of articles) {  
             const html = await ejs.renderFile(path.resolve(path.resolve(process.cwd(), Static.#themes.get(theme)), markdown.metadata.layout + '.ejs'), {
                 opengraph,
                 posts: articles,

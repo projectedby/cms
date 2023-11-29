@@ -1,10 +1,8 @@
-<div class="markdown">
+<div class="markdown <%- markdown.metadata.category %>">
     <%- html %>
-    <div class="button text-end small fw-bold">
+    <div class="button text-end small fw-bold my-3">
         <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=<%- encodeURIComponent(markdown.metadata.description + '\n\n' + markdown.metadata.opengraph.site.url) %>" data-size="large">
             <i class="fa-brands fa-twitter"></i> Twitter
         </a>
-    </div>
-    <div>
     </div>
 </div>

@@ -1,0 +1,71 @@
+div.markdown.ArtificialIntelligenceNews > p {
+    padding: 0px;
+    margin-bottom: 4px;
+}
+
+div.markdown.ArtificialIntelligenceNews > h1 {
+    font-size: 1.5rem;
+}
+
+div.markdown.ArtificialIntelligenceNews > h1 > a {
+    text-decoration: none;
+}
+
+div.markdown.ArtificialIntelligenceNews > h2 {
+    font-size: 1.4rem;
+}
+
+div.markdown.ArtificialIntelligenceNews > h2 + p {
+    margin-bottom: 16px;
+}
+
+div.markdown.ArtificialIntelligenceNews > h2 + p > a {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+div.markdown.ArtificialIntelligenceNews > h2 + p > date {
+    font-size: .6rem;
+    font-weight: 700;
+}
+
+div.markdown.ArtificialIntelligenceNews > h2 + p > author {
+    font-size: .6rem;
+    font-weight: 700;
+}
+
+div.markdown.ArtificialIntelligenceNews > h2 + p > author > a {
+    text-decoration: none;
+}
+
+div.markdown.ArtificialIntelligenceNews > ul {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+div.markdown.ArtificialIntelligenceNews > ul > li {
+    font-size: .8rem;
+}
+
+div.markdown.ArtificialIntelligenceNews > h3 {
+    font-size: 1.3rem;
+}
+
+div.markdown.ArtificialIntelligenceNews > h4 {
+    font-size: 1.2rem;
+}
+
+div.markdown.ArtificialIntelligenceNews > h5 {
+    font-size: 1.1rem;
+}
+
+div.markdown.ArtificialIntelligenceNews > h6 {
+    font-size: 1rem;
+}
+
+div.markdown.ArtificialIntelligenceNews > p {
+    margin-left: 16px;
+    font-size: .8rem;
+}
+
+
