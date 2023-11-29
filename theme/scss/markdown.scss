@@ -21,6 +21,7 @@ div.markdown > h2 {
     padding-top: 8px;
     padding-bottom: 8px;
 
+    margin-top: 16px;
     margin-left: 8px;
 
     font-size: 1.4rem;
@@ -75,6 +76,10 @@ div.markdown > h3 {
     margin-left: 8px;
 
     font-size: 1.3rem;
+}
+
+div.markdown > h3 + pre {
+    margin-bottom: 16px;
 }
 
 div.markdown > h4 {
@@ -134,10 +139,48 @@ div.markdown a {
     text-decoration: underline;
 }
 
+div.markdown > h3 + pre {
+    margin-left: 16px;
+}
+
+div.markdown > h3 + table {
+    margin-left: 16px;
+
+    @extend .table
+}
+
+div.markdown table {
+    margin-left: 16px;
+
+    @extend .table;
+}
+
+div.markdown table th {
+    padding: 8px;
+
+    font-size: .8rem;
+}
+
+div.markdown table td {
+    padding: 8px;
+
+    font-size: .8rem;
+}
+
+div.markdown blockquote {
+    margin-left: 16px;
+}
+
+div.markdown blockquote p {
+    font-size: .7rem;
+}
+
 div.markdown > div.button > a {
     color: var(--bs-primary);
     text-decoration: none;
 }
+
+
 
 @media (min-width: 375px) {
     div.markdown > pre {
