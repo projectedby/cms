@@ -1,7 +1,7 @@
 ---
 layout: 'index'
 view: 'post'
-permalink: '/posts/2023/11/28/Helloworld.html'
+permalink: '/posts/2023/11/28/AI-News-Brief.html'
 opengraph:
     site:
         name: 'ProjectedBy/Sub'

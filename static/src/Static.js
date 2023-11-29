@@ -54,6 +54,14 @@ export default class Static {
             }
         }
 
+        // 아티클을 날짜별로 정렬하기
+        articles.sort((x, y) => {
+            x = new Date(x.markdown.metadata.date);
+            y = new Date(y.markdown.metadata.date);
+
+            return y.getTime() - x.getTime();
+        });
+
         for(const f of await fs.readdir(pages)) {
             if(path.extname(f) === '.md') {
                 const markdown = Markdown.parse(await fs.readFile(path.resolve(pages, f), { encoding: 'utf8' }));
@@ -84,20 +92,6 @@ export default class Static {
 
             await fs.mkdir(path.dirname(position), { recursive: true });
             await fs.writeFile(position, html, { encoding: 'utf8' });
-
-            // if(path.extname(f) === '.md') {
-            //     const markdown = Markdown.parse(await fs.readFile(path.resolve(posts, f), { encoding: 'utf8' }));
-            //     const opengraph = new Opengraph(markdown.metadata.opengraph);
-
-            //     const html = await ejs.renderFile(path.resolve(path.resolve(process.cwd(), Static.#themes.get(theme)), markdown.metadata.layout + '.ejs'), {
-            //         opengraph,
-            //         posts: [],
-            //         html: markdown.html,
-            //         view: markdown.metadata.view
-            //     });
-
-                
-            // }
         }
     }
 
