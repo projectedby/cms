@@ -11932,10 +11932,6 @@ div.markdown > h3, div.markdown > .h3 {
   font-size: 1.3rem;
 }
 
-div.markdown > h3 + pre, div.markdown > .h3 + pre {
-  margin-bottom: 16px;
-}
-
 div.markdown > h4, div.markdown > .h4 {
   font-weight: 700;
   padding-top: 8px;
@@ -11971,7 +11967,7 @@ div.markdown > pre {
   padding-top: 8px;
   padding-bottom: 4px;
   padding-left: 8px;
-  margin: 0px;
+  margin: 0px 0px 16px 8px; /* top, right, bottom, left */
   overflow-x: auto;
 }
 

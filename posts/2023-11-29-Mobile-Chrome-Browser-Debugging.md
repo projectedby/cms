@@ -27,7 +27,21 @@ tags: ['Programming', 'Tip']
 
 [Navigator: share() method](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share)
 
-> 일부 또는 모든 지원 브라우저의 보안 컨텍스트(HTTPS)에서만 사용할 수 있음
+```sh
+button.addEventListener("click", async () => {
+    try {
+        await navigator.share({
+            title: "ProjectedBy/ProgramingTip",
+            text: "2023년 11월 29일 프로그래밍 팁",
+            url: "https://projectedby.github.io/posts/2023/11/29/Programming-Tip.html"
+        });
+    } catch(e) {
+        console.log(e);
+    }
+});
+```
+
+일부 또는 모든 지원 브라우저의 보안 컨텍스트(HTTPS)에서만 사용할 수 있음
 
 Web Share API의 `navigator.share()` 메서드를 통하여 장치의 기본 공유 메커니즘을 호출하여 텍스트, URL 또는 파일과 같은 데이터를 공유 가능
 
@@ -72,19 +86,3 @@ Promise<undefined>
 | TypeError | 공유데이터를 확인할 수 없음(URL 형식이 잘못됨, 파일이 지정되었지만 파일 공유를 지원하지 않음, 사용자 에이전트에 의해 "적대적인 공유"로 간주) |
 | AbortError | 사용자가 공유 작업을 취소했거나 사용 가능한 공유 대상이 없음 |
 | DataError | 공유 대상을 시작하거나 데이터를 전송하는 데 문제가 발생 |
-
-### 예제
-
-```sh
-button.addEventListener("click", async () => {
-    try {
-        await navigator.share({
-            title: "ProjectedBy/ProgramingTip",
-            text: "2023년 11월 29일 프로그래밍 팁",
-            url: "https://projectedby.github.io/posts/2023/11/29/Programming-Tip.html"
-        });
-    } catch(e) {
-        console.log(e);
-    }
-});
-```

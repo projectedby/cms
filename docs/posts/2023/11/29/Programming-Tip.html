@@ -72,9 +72,19 @@
 </ul>
 <h2 id="-1">웹으로 공유하기 구현</h2>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share">Navigator: share() method</a></p>
-<blockquote>
-  <p>일부 또는 모든 지원 브라우저의 보안 컨텍스트(HTTPS)에서만 사용할 수 있음</p>
-</blockquote>
+<pre><code class="sh language-sh">button.addEventListener("click", async () =&gt; {
+    try {
+        await navigator.share({
+            title: "ProjectedBy/ProgramingTip",
+            text: "2023년 11월 29일 프로그래밍 팁",
+            url: "https://projectedby.github.io/posts/2023/11/29/Programming-Tip.html"
+        });
+    } catch(e) {
+        console.log(e);
+    }
+});
+</code></pre>
+<p>일부 또는 모든 지원 브라우저의 보안 컨텍스트(HTTPS)에서만 사용할 수 있음</p>
 <p>Web Share API의 <code>navigator.share()</code> 메서드를 통하여 장치의 기본 공유 메커니즘을 호출하여 텍스트, URL 또는 파일과 같은 데이터를 공유 가능</p>
 <p>파일 공유가 성공하면 항상 <code>navigator.canShare()</code>로 테스트해야 함</p>
 <p>이 기능을 사용하려면 현재 문서에 웹 공유 권한 정책과 임시 활성화가 있어야 함</p>
@@ -141,19 +151,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="-5">예제</h3>
-<pre><code class="sh language-sh">button.addEventListener("click", async () =&gt; {
-    try {
-        await navigator.share({
-            title: "ProjectedBy/ProgramingTip",
-            text: "2023년 11월 29일 프로그래밍 팁",
-            url: "https://projectedby.github.io/posts/2023/11/29/Programming-Tip.html"
-        });
-    } catch(e) {
-        console.log(e);
-    }
-});
-</code></pre>
     <div class="button text-end small fw-bold my-5">
         <a href="#" onclick="return projectedby.share({
             text: '',
