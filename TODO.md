@@ -76,4 +76,8 @@ npx projectecby theme --list
     
     window.navigator.share(...) 를 잘 이용하기로 하자
 
+### 포스트 디렉토리를 읽을 때, 여러 디렉토리를 읽어 내릴 수 있도록 하자.
 
+### SHARE 에 대해서 구현하자.
+
+### 오픈 그래프를 만들도록 하자.
