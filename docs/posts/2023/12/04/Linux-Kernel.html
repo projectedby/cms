@@ -62,77 +62,50 @@
 </header>
 <!-- HEADER -->
         <div class="container p-0 d-flex justify-content-center align-items-center">
-            <form id="subscription" class="needs-validation subscription" novalidate>
-    <!-- TITLE -->
-    <div class="row mb-5">
-        <div class="col text-center">
-            <h1 class="fw-bold">
-                Subscribe newsletter
-                <!-- TODO: 좋은 것을 어떻게 해결해야 할까? -->
-            </h1>
-            <p class="small">
-                Join our subscribers list to get latest news, updates
-            </p>
-        </div>
+            <div class="markdown Linux Kernel">
+    <h1><a href="/posts/2023/12/04/Linux-Kernel.html">Linux Kernel</a></h1><h2 id="">…</h2>
+<!-- BSD 소켓에 대한 자료 조사 -->
+<pre><code class="c language-c">#ifdef CONFIG_NET_RX_BUSY_POLL
+unsigned int sysctl_net_busy_read __read_mostly;
+unsigned int sysctl_net_busy_poll __read_mostly;
+#endif
+</code></pre>
+<p>커널 컴파일 시에 <code>CONFIG_NET_RX_BUSY_POLL</code>를 설정하면 <code>busy read</code> 와 <code>busy poll</code> 타임 아웃 값(unisecond)을 설정할 수 있습니다. (설정시에 전력 소모가 증가할 수 있습니다.)</p>
+<p><a href="https://www.kernel.org/doc/Documentation/sysctl/net.txt">Documentation for /proc/sys/net/*</a></p>
+<ol>
+<li><p>net.core.busy_read</p>
+<ul>
+<li>소켓 읽기 수행 시에 Low latency busy poll 타임 아웃</li>
+<li><code>CONFIG_NET_RX_BUSY_POLL</code> 설정 필요</li>
+<li>디바이스 큐에서 패킷을 기다리는 busy loop 를 위한 유니초 단위의 값</li>
+<li><code>SO_BUSY_POLL</code> 소켓 옵션을 통하여 개별적으로 설정이 가능하고, <code>sysctl</code>을 통하여 모든 소켓에 적용 가능</li>
+<li>권장 값은 50이고, 기본 값은 0(끄기)</li>
+<li>전력 사용량을 증가시킬 수 있음</li></ul></li>
+<li><p>net.core.busy_poll</p>
+<ul>
+<li><code>poll</code>과 <code>select</code>를 위한 Low latency busy poll 타임 아웃</li>
+<li><code>CONFIG_NET_RX_BUSY_POLL</code> 설정 필요</li>
+<li>이벤트를 기다리는 busy loop 를 위한 유니초 단위 값</li>
+<li>권장 값은 소켓의 숫자에 따라서 다르고, 적은 수의 소켓은 50, 수백의 소켓의 경우 100, 상황에 따라 달라질 수 있음</li>
+<li><code>SO_BUSY_POLL</code> 소켓 옵션을 통하여 개별적으로 설정이 가능하고, <code>sysctl</code>을 통하여 모든 소켓에 적용 가능</li>
+<li>전력 사용량을 증가시킬 수 있음</li>
+<li>기본 값은 0(끄기)</li></ul></li>
+<li><p><code>__read_mostly</code></p>
+<p><code>__read_mostly</code> 매크로는 '이 데이터는 자주 수정되지 않고 대부분 읽기 연산만 이루어짐'을 나타내고, 컴파일 과정에서 이 매크로가 선언된 데이터들은 바이너리의 특정한 부분(보통은 '.data.read_mostly' 섹션)에 정의되어, 코어들이 이러한 데이터들을 캐시하게 됩니다.</p>
+<p>읽기 위주의 데이터들만 동일 Cacheline 에 위치시켜서 SMP 내에서 빈번히 발생할 수 있는 Cacheline Bouncing 문제를 방지하기 위함</p></li>
+</ol>
+    <div class="button text-end small fw-bold my-5">
+        <a href="#" onclick="return projectedby.share({
+            text: '',
+            title: 'Linux Kernel',
+            url: '/posts/2023/12/04/Linux-Kernel.html'
+        });" class="me-2">
+            <i class="fa-solid fa-share"></i>
+            Share
+        </a>
     </div>
-    <!-- TITLE -->
-    <!-- IMAGE -->
-    <div class="row mb-5">
-        <div class="col text-center">
-            <img width="160" src="/asset/image/subscribe.svg">
-        </div>
-    </div>
-    <!-- IMAGE -->
-    <!-- HORIZONTAL -->
-    <div class="row mb-2">
-        <div class="col">
-            <hr />
-        </div>
-    </div>
-    <!-- HORIZONTAL -->
-    <!-- FORM -->
-    <div class="row pt-4">
-        <div class="col">
-            <div class="row mb-5">
-                <div class="col">
-                    <label for="email" class="form-label small fw-bold">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-                    <div class="invalid-feedback">
-                        Please enter a email
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col d-grid gap-2">
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- FORM -->
-</form>
-<script type="module">
-    const subscription = document.getElementById('subscription');
+</div>
 
-    const email = document.getElementById('email');
-
-    window.addEventListener('load', event => {
-        projectedby.bootstrap.input.on(email);
-        
-    }, { once: true });
-
-    // projectedby.cms.bootstrap.input.on(email);
-
-    subscription.addEventListener('submit', async event => {
-        event.preventDefault();
-
-        projectedby.bootstrap.input.validate(email);
-
-        projectedby.cms.subscribe(email);
-
-        console.log("register");
-    });
-</script>
         </div>
         <!-- FOOTER -->
 <footer class="bg-body-tertiary">

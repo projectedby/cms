@@ -1,6 +1,6 @@
 {
   "name": "@projectedby/cms",
-  "version": "0.0.24",
+  "version": "0.0.26",
   "description": "ProjectedBy Content Management System",
   "main": "./src/index.js",
   "type": "module",
@@ -41,6 +41,7 @@
     "ejs": "^3.1.9",
     "minimist": "^1.2.8",
     "showdown": "^2.1.0",
+    "showdown-math": "^0.0.4",
     "yaml": "^2.3.4"
   },
   "devDependencies": {

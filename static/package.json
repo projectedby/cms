@@ -30,6 +30,7 @@
   "dependencies": {
     "ejs": "^3.1.9",
     "showdown": "^2.1.0",
+    "showdown-katex": "^0.8.0",
     "yaml": "^2.3.4"
   },
   "devDependencies": {
