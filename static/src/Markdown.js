@@ -15,7 +15,7 @@ export default class Markdown {
               // change errorColor to blue
               errorColor: '#1500ff',
               delimiters: [
-                { left: "$", right: "$", display: false },
+                { left: "$", right: "$", display: false, asciimath: true },
                 { left: '~', right: '~', display: false, asciimath: true },
               ],
             }),

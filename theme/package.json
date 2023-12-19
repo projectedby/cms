@@ -9,9 +9,10 @@
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "build": "npm run build:css && npm run build:javascript",
+    "build": "npm run build:css && npm run build:css:novemberizing && npm run build:javascript",
     "build:javascript": "webpack --config webpack/config/dev.js",
     "build:css": "sass scss/cms.scss cms/asset/css/cms.css",
+    "build:css:novemberizing": "sass scss/novemberizing.scss novemberizing/asset/css/novemberizing.css",
     "test": "mocha --recursive"
   },
   "repository": {

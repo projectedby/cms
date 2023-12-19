@@ -1,13 +1,14 @@
 {
   "name": "@projectedby/cms",
-  "version": "0.0.26",
+  "version": "0.0.28",
   "description": "ProjectedBy Content Management System",
   "main": "./src/index.js",
   "type": "module",
   "scripts": {
     "build:theme": "npm run build --workspace theme",
     "build:cms": "npx projectedby static gen --theme=cms --destination=docs",
-    "build": "npm run build:theme && npm run build:cms",
+    "build:novemberizing": "npx projectedby static gen --theme=novemberizing --destination=novemberizing",
+    "build": "npm run build:theme && npm run build:cms && npm run build:novemberizing",
     "test": "mocha --recursive",
     "test:static": "npm run test --workspace static"
   },
@@ -39,6 +40,7 @@
   ],
   "dependencies": {
     "ejs": "^3.1.9",
+    "firebase": "^10.7.1",
     "minimist": "^1.2.8",
     "showdown": "^2.1.0",
     "showdown-math": "^0.0.4",
